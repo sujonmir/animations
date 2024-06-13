@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>Creative CSS Loading Animation</title>
+	<style type="text/css">
+		/*===3deg, 6deg, 31deg, 36, 37, 40, 52, 89 30deg, 143deg, ===*/
+		:root {
+			--deg: 10deg;
+		}
+
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		body {
+			min-height: 100vh;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background-color: #111;
+		}
+		ul.loader {
+			position: relative;
+			width: 250px;
+			height: 250px;
+			list-style: none;
+			transform: rotate(0deg);
+		}
+		ul.loader li, 
+		ul.loader li div {
+			position: absolute;
+			top: 0;
+			left: 50%;
+			width: 2px;
+			height: 50%;
+			transform-origin: bottom;
+			transform: translateX(-50%);
+		}
+		ul.loader li {
+			transform: translateX(-50%) rotate(calc(var(--deg) * var(--i)));
+		}
+		ul.loader li div {
+			width: 4px;
+			height: 50%;
+			transform-origin: top;
+			border-radius: 10px;
+			transform: translateX(-50%) rotate(45deg);
+			background-color: hsl(calc(10deg * var(--i)), 100%, 50%);
+			animation: load 4s ease-in-out infinite;
+			animation-delay: calc(0.2s * var(--i));
+		}
+		ul.loader li div::before,
+		ul.loader li div::after {
+			content:'';
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 5px;
+			height: 5px;
+			border-radius: 50%;
+			border: 2px solid hsl(calc(10deg * var(--r)), 100%, 50%);
+			box-shadow: 0 0 5px hsl(calc(10deg * var(--r)), 100%, 50%),
+						0 0 10px hsl(calc(10deg * var(--r)), 100%, 50%),
+						0 0 15px hsl(calc(10deg * var(--r)), 100%, 50%),
+						0 0 25px hsl(calc(10deg * var(--r)), 100%, 50%);
+		}
+		ul.loader li div::before {
+			top: -5px;
+		}
+		ul.loader li div::after {
+			bottom: -5px;
+		}
+		@keyframes load {
+			0%, 100% {
+				transform: translateX(65%) rotate(65deg);
+			}
+			50% {
+				transform: translateX(-65%) rotate(-65deg);
+			}
+		}
+	</style>
+</head>
+<body>
+	<ul class="loader">
+		<li style="--i:1; --r:36"><div></div></li>
+		<li style="--i:2; --r:35"><div></div></li>
+		<li style="--i:3; --r:34"><div></div></li>
+		<li style="--i:4; --r:33"><div></div></li>
+		<li style="--i:5; --r:32"><div></div></li>
+		<li style="--i:6; --r:31"><div></div></li>
+		<li style="--i:7; --r:30"><div></div></li>
+		<li style="--i:8; --r:29"><div></div></li>
+		<li style="--i:9; --r:28"><div></div></li>
+		<li style="--i:10; --r:27"><div></div></li>
+		<li style="--i:11; --r:26"><div></div></li>
+		<li style="--i:12; --r:25"><div></div></li>
+		<li style="--i:13; --r:24"><div></div></li>
+		<li style="--i:14; --r:23"><div></div></li>
+		<li style="--i:15; --r:22"><div></div></li>
+		<li style="--i:16; --r:21"><div></div></li>
+		<li style="--i:17; --r:20"><div></div></li>
+		<li style="--i:18; --r:19"><div></div></li>
+		<li style="--i:19; --r:18"><div></div></li>
+		<li style="--i:20; --r:17"><div></div></li>
+		<li style="--i:21; --r:16"><div></div></li>
+		<li style="--i:22; --r:15"><div></div></li>
+		<li style="--i:23; --r:14"><div></div></li>
+		<li style="--i:24; --r:13"><div></div></li>
+		<li style="--i:25; --r:12"><div></div></li>
+		<li style="--i:26; --r:11"><div></div></li>
+		<li style="--i:27; --r:10"><div></div></li>
+		<li style="--i:28; --r:9"><div></div></li>
+		<li style="--i:29; --r:8"><div></div></li>
+		<li style="--i:30; --r:7"><div></div></li>
+		<li style="--i:31; --r:6"><div></div></li>
+		<li style="--i:32; --r:5"><div></div></li>
+		<li style="--i:33; --r:4"><div></div></li>
+		<li style="--i:34; --r:3"><div></div></li>
+		<li style="--i:35; --r:2"><div></div></li>
+		<li style="--i:36; --r:1"><div></div></li>
+	</ul>
+</body>
+</html>

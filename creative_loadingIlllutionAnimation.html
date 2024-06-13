@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Loading Illution Animation</title>
+    <style>
+        :root {--totalSpan: 40;}
+        *{margin: 0; padding: 0;}
+        *,*::before,*::after {box-sizing: border-box;}
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #111;
+        }
+        h2 {
+            position: absolute;
+            top: 40px;
+            color: #ffffeb;
+            background-color: orchid;
+            padding: 15px;
+            border-radius: 5px;
+            transform: skewX(10deg);
+            font-style: italic;
+        }
+        main.loader {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            /*border-radius: 50%;*/
+            animation: bg 5s ease-in-out infinite;
+        }
+        main.loader span {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 3px;
+            height: 50%;
+            transform-origin: bottom;
+            transform: translateX(-50%) rotate(calc((360deg / var(--totalSpan)) * var(--i)));
+        }
+        main.loader span::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 25px;
+            border-radius: 3px;
+            background-color: #54ff7b;
+            box-shadow: 0 -5px 5px #54ff7b;
+            transform-origin: bottom;
+            transform: scaleY(1);
+            animation: grow 1s ease-in-out infinite;
+            animation-delay: calc(0.2s * var(--i));
+        }
+        @keyframes grow {
+            0% {
+                transform: scaleY(1);
+            }
+            50% {
+                transform: scaleY(2);
+            }
+        }
+        @keyframes bg {
+            0% {
+                filter: hue-rotate(0deg);
+                transform: rotate(0deg);
+            }
+            100% {
+                 filter: hue-rotate(360deg);
+                transform: rotate(-360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+  <h2>CSS3 Creative Loading Animation</h2>
+   <main class="loader">
+       <span style="--i:1"></span>
+       <span style="--i:2"></span>
+       <span style="--i:3"></span>
+       <span style="--i:4"></span>
+       <span style="--i:5"></span>
+       <span style="--i:6"></span>
+       <span style="--i:7"></span>
+       <span style="--i:8"></span>
+       <span style="--i:9"></span>
+       <span style="--i:10"></span>
+       <span style="--i:11"></span>
+       <span style="--i:12"></span>
+       <span style="--i:13"></span>
+       <span style="--i:14"></span>
+       <span style="--i:15"></span>
+       <span style="--i:16"></span>
+       <span style="--i:17"></span>
+       <span style="--i:18"></span>
+       <span style="--i:19"></span>
+       <span style="--i:20"></span>
+       <span style="--i:21"></span>
+       <span style="--i:22"></span>
+       <span style="--i:23"></span>
+       <span style="--i:24"></span>
+       <span style="--i:25"></span>
+       <span style="--i:26"></span>
+       <span style="--i:27"></span>
+       <span style="--i:28"></span>
+       <span style="--i:29"></span>
+       <span style="--i:30"></span>
+       <span style="--i:31"></span>
+       <span style="--i:32"></span>
+       <span style="--i:33"></span>
+       <span style="--i:34"></span>
+       <span style="--i:35"></span>
+       <span style="--i:36"></span>
+       <span style="--i:37"></span>
+       <span style="--i:38"></span>
+       <span style="--i:39"></span>
+       <span style="--i:40"></span>
+   </main>
+</body>
+</html>

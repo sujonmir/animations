@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cool Animation Effects</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        background: #000;
+      }
+      .heading {
+        font-size: 48px;
+        font-weight: bold;
+        background: linear-gradient(
+          to right,
+          red,
+          orange,
+          yellow,
+          green,
+          blue,
+          indigo,
+          violet
+        );
+        background-size: 200% auto;
+        color: transparent;
+        background-clip: text;
+        -webkit-background-clip: text;
+        animation: rgbEffect 6s linear infinite;
+        margin-bottom: 20px;
+      }
+
+      @keyframes rgbEffect {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      iframe {
+        width: 90%;
+        height: 580px;
+        border: 2px solid #ccc;
+        margin-bottom: 20px;
+      }
+      .button-container {
+        display: flex;
+        gap: 10px;
+      }
+      button {
+        padding: 5px 8px;
+        font-size: 12px;
+        cursor: pointer;
+        background: transparent;
+        border: 2px solid #fff;
+        color: #fff;
+        transition: all linear 0.3s;
+      }
+      button:hover {
+        background: rgba(255, 255, 255, 0.26);
+      }
+      .selected {
+        color: lime !important;
+        border: 2px solid lime !important;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="heading">Enjoy Some Cool Animation Effects</h1>
+    <iframe id="animationIframe" src="3d wave animation.html"></iframe>
+    <div class="button-container">
+      <button onclick="loadAnimation('3d wave animation.html', this)" class="selected">
+        Animation 1
+      </button>
+      <button onclick="loadAnimation('3d_wave_animation_effect_2.html', this)">
+        Animation 2
+      </button>
+      <button
+        onclick="loadAnimation('AdvancedCSS3dLoadingAnimation.html', this)"
+      >
+        Animation 3
+      </button>
+      <button
+        onclick="loadAnimation('AdvancedCSS3dLoadingAnimation.html', this)"
+      >
+        Animation 4
+      </button>
+      <button onclick="loadAnimation('coolAnimation.html', this)">
+        Animation 5
+      </button>
+      <button
+        onclick="loadAnimation('creative_loadingIlllutionAnimation.html', this)"
+      >
+        Animation 6
+      </button>
+      <button onclick="loadAnimation('creativeCSSLoadingAnimation.html', this)">
+        Animation 7
+      </button>
+      <button onclick="loadAnimation('CSS-colorful-wave-animation.html', this)">
+        Animation 8
+      </button>
+      <button onclick="loadAnimation('dnaLoader.html', this)">
+        Animation 9
+      </button>
+      <button onclick="loadAnimation('infiniteLoadingAnimation.html', this)">
+        Animation 10
+      </button>
+      <button onclick="loadAnimation('multipleDotAnimate.html', this)">
+        Animation 11
+      </button>
+      <button onclick="loadAnimation('pencilRotatingAnimation.html', this)">
+        Animation 12
+      </button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

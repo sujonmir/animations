@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport", content="width=device-width, initial-scale=1.0">
+	<title>Infinite Loading Animaition</title>
+	<style>
+		*{margin: 0; padding: 0; box-sizing: border-box;}
+		body {
+			position: relative;
+		    min-height: 100vh;
+		    display: grid;
+		    place-items: center;
+		    background: #111;
+		}
+		main {
+			display: flex;
+			animation: bgcolor 2s linear infinite;
+		}
+		main span {
+			width: 20px;
+			height: 20px;
+			border-radius: 50%;
+			background: #36ff71;
+			margin: 0 15px;
+			box-shadow: 0 0 10px #36ff71,
+						0 0 20px #36ff71,
+						0 0 30px #36ff71,
+						0 0 40px #36ff71,
+						0 0 50px #36ff71,
+						0 0 60px #36ff71,
+						0 0 70px #36ff71,
+						0 0 80px #36ff71,
+						0 0 90px #36ff71,
+						0 0 100px #36ff71;
+			animation: right 1s ease-in-out infinite;
+		}
+		main span:last-child {
+			animation: scaleDown 1s ease-in-out -1s infinite;
+		}
+		main span:first-child {
+			animation: scaleUp 1s ease-in-out -1s infinite;
+		}
+		@keyframes right {
+			0% {
+				transform: translateX(0);
+			}
+			100% {
+				transform: translateX(50px);
+			}
+		}
+		@keyframes scaleDown {
+			0% {
+				transform: scale(1);
+			}
+			100% {
+				transform: scale(0);
+			}
+		}
+		@keyframes scaleUp {
+			0% {
+				transform: translateX(0) scale(0);
+			}
+			100% {
+				transform: translateX(50px) scale(1);
+			}
+		}
+		@keyframes bgcolor {
+			0% {
+				filter: hue-rotate(0deg);
+			}
+			100% {
+				filter: hue-rotate(360deg);
+			}
+		}
+	</style>
+</head>
+<body>
+ <main>
+ 	<span></span>
+ 	<span></span>
+ 	<span></span>
+ 	<span></span>
+ </main>
+</body>
+</html>
