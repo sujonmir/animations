@@ -58,6 +58,7 @@
       }
       .button-container {
         display: flex;
+        flex-wrap: wrap;
         gap: 10px;
       }
       button {
@@ -76,13 +77,29 @@
         color: lime !important;
         border: 2px solid lime !important;
       }
+      @media screen and (max-width: 600px) {
+        .button-container {
+          justify-content: center;
+        }
+        .heading {
+          font-size: 28px;
+          text-align: center;
+        }
+        iframe {
+          width: 98%;
+          height: 500px;
+        }
+      }
     </style>
   </head>
   <body>
     <h1 class="heading">Enjoy Some Cool Animation Effects</h1>
     <iframe id="animationIframe" src="3d wave animation.html"></iframe>
     <div class="button-container">
-      <button onclick="loadAnimation('3d wave animation.html', this)" class="selected">
+      <button
+        onclick="loadAnimation('3d wave animation.html', this)"
+        class="selected"
+      >
         Animation 1
       </button>
       <button onclick="loadAnimation('3d_wave_animation_effect_2.html', this)">
